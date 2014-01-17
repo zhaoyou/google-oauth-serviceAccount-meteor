@@ -1,5 +1,5 @@
 {
-  "name": "google-oauth-serviceAccount",
+  "name": "goauth-serviceAccount",
   "description": "access google data service oath by serviceAccount",
   "homepage": "https://github.com/zhaoyou/google-oauth-serviceAccount-meteor",
   "author": "zhaoyou (www.meteorjs.info)",

@@ -1,6 +1,6 @@
 process.env.TZ = 'UTC';
 
-if (typeof Meteor === 'undefined) {
+if (typeof Meteor === 'undefined') {
   // Not Running In Meteor (nodejs code)
   // example NPM/Node Dependencies that we'll use
   var request = require('request');
@@ -74,6 +74,7 @@ if (typeof Meteor === 'undefined') {
 } else {
    // Export it meteor style
    GoogleOauthServiceAccount = GOauthServiceAcccount; // Make it a global
+   console.log('meteor: *****', Meteor);
 }
 
 GoogleOauthServiceAccount.prototype.auth = function(callback) {
@@ -91,7 +92,7 @@ GoogleOauthServiceAccount.prototype.auth = function(callback) {
         callback(err, null);
       } else {
         if (res.statusCode == 200) {
-          logger.info("STATUS:200");
+          console.log("STATUS:200");
           callback(err, JSON.parse(body).access_token);
         } else {
           console.log('STATUS: ' + res.statusCode);
